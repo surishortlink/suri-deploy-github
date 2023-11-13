@@ -1,0 +1,23 @@
+{
+  "name": "@surishortlink/deploy-github",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A template repository tailored for deploying Suri to GitHub Pages",
+  "homepage": "https://github.com/surishortlink/suri-deploy-github#readme",
+  "bugs": "https://github.com/surishortlink/suri-deploy-github/issues",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surishortlink/suri-deploy-github.git"
+  },
+  "scripts": {
+    "build": "suri"
+  },
+  "devDependencies": {
+    "@surishortlink/suri": "^1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
