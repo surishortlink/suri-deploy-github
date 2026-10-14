@@ -15,9 +15,9 @@
     "build": "suri"
   },
   "devDependencies": {
-    "@surishortlink/suri": "^1"
+    "@surishortlink/suri": "^2"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   }
 }
