@@ -31,6 +31,13 @@ GitHub Actions workflow for building the site and deploying to GitHub Pages.
 
 ### Custom Domain
 
+Without a custom domain, GitHub Pages serves your site from
+`https://<username>.github.io/<repository>/` (unless the repository is named
+`<username>.github.io`), so every short link includes the repository name, like
+`/<repository>/gh`. Suri's default `favicon.ico` and `robots.txt` also go
+unused there, since browsers and crawlers only look for them at the root of a
+domain.
+
 To use a custom domain, follow GitHub's guide:
 [Managing a custom domain for your GitHub Pages site](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
 
@@ -52,8 +59,9 @@ include this file seeded with a few examples:
 
 It couldn't be simpler: the key is the "short link" path that gets redirected,
 and the value is the target URL. Keys can be as short or as long as you want,
-using whatever mixture of characters you want. `/` is a special entry for
-redirecting the root path.
+and can include `/` for nested paths, like `gh/suri`. Avoid `?` and `#`, which
+browsers treat as the start of a query string or fragment. `/` is a special
+entry for redirecting the root path.
 
 ### Build Static Site
 
