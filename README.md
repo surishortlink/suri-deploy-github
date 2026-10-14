@@ -31,6 +31,13 @@ GitHub Actions workflow for building the site and deploying to GitHub Pages.
 
 ### Custom Domain
 
+Without a custom domain, GitHub Pages serves your site from
+`https://<username>.github.io/<repository>/` (unless the repository is named
+`<username>.github.io`), so every short link includes the repository name, like
+`/<repository>/gh`. Suri's default `favicon.ico` and `robots.txt` also go
+unused there, since browsers and crawlers only look for them at the root of a
+domain.
+
 To use a custom domain, follow GitHub's guide:
 [Managing a custom domain for your GitHub Pages site](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
 
