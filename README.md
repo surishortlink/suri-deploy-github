@@ -16,11 +16,13 @@ Suri, including additional deployment options.
 
 1. Hit the "Use this template" button above and then "Create a new repository".
    Fill in the required details to create a new repository based on this one.
+   On a free GitHub plan, the repository must be public for GitHub Pages to
+   work.
 2. Go to the "Settings" of your new repository and head to the "Pages" section.
    Under "Build and deployment", change the "Source" to "GitHub Actions".
-3. Go to the "Actions" of your new repository. There should be a workflow run
-   that likely failed because the previous step wasn't yet completed. Go ahead
-   and view the workflow run and hit the "Re-run jobs" button.
+3. Go to the "Actions" of your new repository and select the "Deploy to GitHub
+   Pages" workflow. Hit the "Run workflow" button to build and deploy your site
+   for the first time.
 
 ### Auto-Deploy
 
