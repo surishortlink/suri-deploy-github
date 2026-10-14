@@ -4,20 +4,24 @@ on:
   push:
     branches:
       - main
+  pull_request:
   workflow_dispatch:
 
 permissions:
   contents: read
 
+# Deploys run one at a time and are never canceled. Pull requests only build,
+# so each gets its own group, where a new push cancels the previous build.
 concurrency:
-  group: deploy
-  cancel-in-progress: false
+  group: ${{ github.event_name == 'pull_request' && format('build-{0}', github.event.pull_request.number) || 'deploy' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - name: Check out repository
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
       - name: Setup Node.js
@@ -30,11 +34,13 @@ jobs:
       - name: Build with Suri
         run: npm run build
       - name: Upload GitHub Pages artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v5
         with:
           path: build/
           include-hidden-files: true
   deploy:
+    if: github.event_name != 'pull_request'
     needs: build
     permissions:
       pages: write

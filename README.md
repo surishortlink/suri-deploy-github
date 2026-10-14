@@ -25,7 +25,8 @@ Suri, including additional deployment options.
 ### Auto-Deploy
 
 Any commits to the `main` branch of your new repository will trigger a new build
-and deploy. You can change this by editing
+and deploy. Pull requests are built without deploying, so a mistake in
+`links.json` is caught before it's merged. You can change this by editing
 [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which is the
 GitHub Actions workflow for building the site and deploying to GitHub Pages.
 
