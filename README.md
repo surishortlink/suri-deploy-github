@@ -41,6 +41,21 @@ domain.
 To use a custom domain, follow GitHub's guide:
 [Managing a custom domain for your GitHub Pages site](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
 
+### Updating Suri
+
+[Dependabot](https://docs.github.com/en/code-security/dependabot) opens a pull
+request in your repository about a week after a new version of Suri is released.
+You can also update it yourself:
+
+```bash
+npm install @surishortlink/suri@latest
+```
+
+Then commit the updated `package.json` and `package-lock.json`. Before updating
+to a new major version, check
+[the release notes](https://github.com/surishortlink/suri/releases) for breaking
+changes.
+
 ## How It Works
 
 ### Manage Links
